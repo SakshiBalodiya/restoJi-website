@@ -106,6 +106,7 @@
                     <td align="center" valign="middle">
                         <div class="sub-header-content">
                             <h1>Congratulations</h1>
+                            
                             <h2>You have a new inquiry from your website</h2>
                         </div>
                     </td>
