@@ -1,0 +1,17 @@
+:root {
+    --primary-color: #C72C3C;
+    --primary-color-rgb: 199, 44, 60;
+  
+    --secondary-color: #f2a3ab;
+    --secondary-color-rgb: 242, 163, 171;
+  
+    --ion-color-primary-contrast: #fff;
+
+    --ion-color-dark: #000;
+
+    --color-title: #1A1C1E;
+    --ion-color-text: #4B5563;
+    --color-bg-light: #FDEBED;
+    --color-footer-text: #455A64;
+    --color-grey: #666666
+  }
