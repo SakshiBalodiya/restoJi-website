@@ -7,18 +7,25 @@
                 Our <span class="highlight-text">Point of Sale</span>
             </h1>
             <p class="hero-description">
-                RestoJi empowers businesses of all types—restaurants, retail shops, grocery stores, and more—
+                @if (Str::contains(request()->url(), 'restoji')) 
+                    <span>RestoJi </span>
+                    @else
+                    <span>Majestic POS</span>
+                    @endif
+                empowers businesses of all types—restaurants, retail shops, grocery stores, and more—
                 with an easy-to-use POS, online ordering, and inventory management system. Simplify your operations,
                 boost sales, and manage everything in one place.
             </p>
-            <a href="#" class="btn round_btn btn-lg" style="width: 16%">Get Started</a>
+            <a href="#" class="btn round_btn btn-lg">Get Started</a>
         </div>
 
         <div class="image-container">
-            <img src="resources/images/pos-dashboard.png" alt="POS Dashboard" class="dashboard-img">
-            <img src="resources/images/chart1.png" alt="Chart 1" class="floating-chart chart-1">
-            <img src="resources/images/chart2.png" alt="Chart 2" class="floating-chart chart-2">
-            <img src="resources/images/chart3.png" alt="Chart 3" class="floating-chart chart-3">
+            @if (Str::contains(request()->url(), 'restoji'))
+                <img src="resources/images/pos-dashboard.png" alt="POS Dashboard" class="dashboard-img">
+            @else
+                <img src="resources/images/pos-dashboard-majestic.png" alt="POS Dashboard" class="dashboard-img">
+            @endif
+
         </div>
     </div>
 
@@ -47,7 +54,11 @@
                 </p>
             </div>
             <div class="col-lg-6 fe-img">
-                <img src="resources/images/minipos.png" alt="Mini Pos" class="">
+                @if (Str::contains(request()->url(), 'restoji'))
+                <img src="resources/images/minipos.png" alt="Mini Pos" class="" height="344px">
+                @else
+                <img src="resources/images/minipos-majestic.png" alt="Mini Pos" class="" height="344px">
+                @endif
             </div>
         </div>
 
@@ -59,7 +70,11 @@
         <div class="row pt-5" style="margin: 0px;">
 
             <div class="col-lg-6">
-                <img src="resources/images/chart4.png" alt="Chart 4" class="" width="100%">
+                @if (Str::contains(request()->url(), 'restoji'))
+                    <img src="resources/images/chart4.png" alt="Chart 4" class="chart-4">
+                @else
+                    <img src="resources/images/chart4-majestic.png" alt="Chart 4" class="">
+                @endif
             </div>
             <div class="col-lg-6 text-justify fe-details">
                 <h3>Get Access to <span class="highlight-text">Advanced Reporting & Analytics</span></h3>
@@ -77,11 +92,15 @@
         <a href="#" class="btn round_btn btn-lg mt-4">See All</a>
     </div>
 </div>
-<div class="pricing-section" id="pricing-section"> 
+<div class="pricing-section {{ Str::contains(request()->url(), 'restoji') ? 'red-theme' : 'blue-theme' }}" id="pricing-section" > 
     <div class="container text-center">
         <div class="row pt-5 top_heading" style="margin: 0px;">
             <p class="title">Pricing</p>
-            <h2>Get Started With <span class="highlight-text">RestoJi</span></h2>
+            <h2>Get Started With <span class="highlight-text">@if (Str::contains(request()->url(), 'restoji')) 
+                <span>RestoJi</span>
+                @else
+                <span>Majestic POS</span>
+                @endif</span></h2>
             <div class="bottom-gradient"></div>
         </div>
         <div class="row price_row"  style="margin: 0px;">
@@ -95,7 +114,7 @@
                 <h2>Rs. 3999 <span class="small-text">per year</span></h2>
                 <hr class="border_bottom">
                 <ul>
-                    <li><i class="fadeIn animated bx bx-check"></i>Cloud Billing</li>
+                    <li>Cloud Billing</li>
                     <li>Order Management</li>
                     <li>Customer Database</li>
                     <li>Billing Reports</li>
@@ -109,6 +128,7 @@
     
             <div class="pricing-card business">
                 <div class="card-icon">
+                    
                     <img src="resources/images/diamond.png" alt="Business Icon">
                 </div>
                 <h3 class="pt-2">Business <span class="best-offer">Best Offer</span></h3>
@@ -143,7 +163,11 @@
         <div class="row pt-5" style="margin: 0px;">
             <div class="col-lg-6 left">
                 <div class="feature">
+                    @if (Str::contains(request()->url(), 'restoji'))
                     <img src="resources/images/box-red.png" alt="box-red">
+                    @else
+                    <img src="resources/images/box-blue.png" alt="box-red">
+                    @endif
                     <div>
                         <h4>Your Branding, Your Identity</h4>
                         <p class="paragraph">Get a fully customized app with your restaurant’s logo, colors, and theme.</p>
@@ -166,8 +190,10 @@
             </div>
             <div class="col-lg-6 right" style="position: relative;">
                 <div class="back_icons2"></div>
-                <img src="resources/images/customer_app1.png" alt="App Mockup" class="phone_img1">
-                 <img src="resources/images/customer_app2.png" alt="App Mockup" class="phone_img2">
+                {{-- <img src="resources/images/customer_app1.png" alt="App Mockup" class="phone_img1">
+                 <img src="resources/images/customer_app2.png" alt="App Mockup" class="phone_img2"> --}}
+                 <img src="resources/images/arya-app1.png" alt="App Mockup" class="phone_img1">
+                 <img src="resources/images/arya-app2.png" alt="App Mockup" class="phone_img2">
             </div>
         </div>
         <h2 class="how-it-works-title">How It Works?</h2>
@@ -195,14 +221,24 @@
         </div>
     </div>
 </div>
-<div class="faq-section pb-5"> 
-    <img src="resources/images/back_design.png" alt="back_design" class="back_design">
+<div class="faq-section pb-5">
+    @if (Str::contains(request()->url(), 'restoji')) 
+        <img src="resources/images/back_design.png" alt="back_design" class="back_design">
+    @else
+        <img src="resources/images/back_design-majestic.png" alt="back_design" class="back_design">
+    @endif
     <div class="container text-center">
         <div class="row pt-5 faq_space_between" style="margin: 0px;">
             <div class="col-lg-6 faq_text_section">
                 <h2>FAQ’s - Everything You Need to Know.
                 </h2>
-                <p class="paragraph">Find answers to common questions about RestoJi, our pricing, features, and how to get started."</p>
+                <p class="paragraph">Find answers to common questions about 
+                    @if (Str::contains(request()->url(), 'restoji')) 
+                    <span>RestoJi, </span>
+                    @else
+                    <span>Majestic POS, </span>
+                    @endif
+                    our pricing, features, and how to get started.</p>
                 <p class="paragraph">For more queries feel free to reach us.</p>
             </div>
             <div class="col-lg-6 faq-accordion">

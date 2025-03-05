@@ -49,25 +49,30 @@ function page_url()
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>RestoJi</title>
+    <title>{{ Str::contains(request()->url(), 'restoji') ? 'RestoJi' : 'Majestic POS' }}</title>
+
 
 </head>
-    <body class="front">
+<body class="front {{ Str::contains(request()->url(), 'restoji') ? 'red-theme' : 'blue-theme' }}">
         <header>
             <div class="header-container">
                 <nav class="navbar navbar-expand-lg rounded">
                     <div class="container-fluid phone-nav">
                         <div class="header_logo">
                             <a class="navbar-brand" href="{{ url('/') }}">
+                                @if (Str::contains(request()->url(), 'restoji'))
                                 <img src="{{ asset('images\logo.png') }} " alt="logo">
+                                @else
+                                <img src="{{ asset('images\majestic-technosoft-pvt-ltd.png') }} " alt="logo">
+                                @endif
                             </a>
                         </div>
                         <!-- <div class="d-sm-none hosting_btn">
                                 <button>Hosting</button>
                         </div> -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent4" aria-controls="navbarSupportedContent4" aria-expanded="false" aria-label="Toggle navigation">
-                            <span>Go to... </span>
-                            <span class="navbar-toggler-icon"></span>
+                            <span><i class="lni lni-menu"></i></span>
+                           
                         </button>
                         <div class="collapse navbar-collapse nav_margin" id="navbarSupportedContent4" style="justify-content: space-around">
                            
@@ -76,8 +81,8 @@ function page_url()
 
                                 <li class="nav-item <?php if (page_url() == url('/') || page_url() == url('/')) {
                                                         echo 'active';
-                                                    } ?>">
-                                    <a class="nav-link nav_headings" href="{{ url('/') }}">Home</a>
+                                                    } ?>" >
+                                    <a class="nav-link nav_headings" href="{{ url('/') }}" style="color: var(--primary-color);">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link nav_headings" href="#features-section">Features</a>
@@ -96,12 +101,12 @@ function page_url()
                                 
                                
                             </ul>
-                            <div>
-                                <ul class="navbar-nav ms-auto border-dark">
-                                    <li class="nav-item">
-                                        <a class="nav-link nav_headings" href="#contact_section">Book A Demo</a>
-                                    </li>
-                                </ul>
+                            <div class="border-dark">
+                                <a href="#contact_section" class="btn book_btn btn-lg book_btn">Book A Demo</a>
+                                {{-- <ul class="navbar-nav ms-auto border-dark">
+                                    <a class="nav-link nav_headings book_btn" href="#contact_section">Book A Demo</a>
+                                
+                                </ul> --}}
                             </div>
     
                         </div>

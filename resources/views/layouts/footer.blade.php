@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- <title>Document</title> --}}
 </head>
-
 <body>
     <footer class="footer mt-auto">
         <div class="container">
             <div class="pt-5">
-                <img src="resources/images/majestic-technosoft-pvt-ltd.png" alt="Majestic Logo">
+                <img src="resources/images/majestic-technosoft-pvt-ltd.png" alt="Majestic Logo" height="54px">
+                @if (Str::contains(request()->url(), 'restoji')) 
                 <p class="pt-2">
-                    <img src="{{ asset('images\logo.png') }} " alt="logo"> <span class="title">
+                    <img src="{{ asset('images\logo.png') }} " alt="logo" height="54px"> <span class="title">
                         - A Product by Majestic Technosoft Pvt. Ltd.</span>
                 </p>
+                @endif
             </div>
             <div class="row">
                 <div class="col-lg-4 footer-left">
-                   
                     <p>
                         Majestic Technosoft is the fastest growing offshore service provider 
                         in India, offering a wide range of web development, web design, flash 

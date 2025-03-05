@@ -1,5 +1,6 @@
 :root {
-    --primary-color: #C72C3C;
+    /* --primary-color: #C72C3C; */
+    --primary-color: #234B90;
     --primary-color-rgb: 199, 44, 60;
   
     --secondary-color: #f2a3ab;
@@ -11,7 +12,26 @@
 
     --color-title: #1A1C1E;
     --ion-color-text: #4B5563;
-    --color-bg-light: #FDEBED;
+    --color-bg-light: #608bc136;
     --color-footer-text: #455A64;
-    --color-grey: #666666
+    --color-grey: #666666;
+    --filter-color-custom : brightness(0) saturate(100%) invert(23%) sepia(64%) saturate(1615%) hue-rotate(198deg) brightness(89%) contrast(90%);
+    /* --filter-color-custom : brightness(0) saturate(100%) invert(21%) sepia(63%) saturate(3462%) hue-rotate(339deg) brightness(83%) contrast(95%); */
+  }
+  .red-theme{
+    --primary-color: #C72C3C;
+    --filter-color-custom : brightness(0) saturate(100%) invert(21%) sepia(63%) saturate(3462%) hue-rotate(339deg) brightness(83%) contrast(95%);
+    --color-bg-light: #fdebed;
+    --color-footer-text: #455A64;
+    --color-grey: #666666;
+    --ion-color-dark: #000;
+
+    --color-title: #1A1C1E;
+    --ion-color-text: #4B5563;
+    --primary-color-rgb: 199, 44, 60;
+  
+    --secondary-color: #f2a3ab;
+    --secondary-color-rgb: 242, 163, 171;
+  
+    --ion-color-primary-contrast: #fff;
   }
