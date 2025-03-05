@@ -18,13 +18,16 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+       
         .email-container {
             max-width: 600px;
             margin: 20px auto;
             background-color: #ffffff;
-            border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: 0.3s;
         }
         .header {
             background-color: #ffff;
@@ -33,17 +36,16 @@
             text-align: center;
         }
         .header img {
-            width: 100px;
             margin-bottom: 10px;
         }
         .sub-header h1 {
             font-size: 26px;
             margin: 0;
-            color: #1DA1EC;
+            color: #C72C3C;
             font-weight: bold;
         }
         .sub-header {
-            background-color: #F9F9F9;
+            background-color: #fef9f9e0;
             text-align: center;
             height: 100px;
             display: flex;
@@ -54,10 +56,11 @@
         .content {
             padding: 20px;
         }
-        .sub-header h2 {
-            font-size: 20px;
-            color: #333;
-            margin: 0px
+        .h2 {
+            font-size: 15px;
+            color: #484646;
+            margin: 0px;
+            font-weight: 500;
         }
         .content p {
             margin: 5px 0;
@@ -92,12 +95,15 @@
         .social-links img {
             width: 24px;
         }
+        .card{
+           
+        }
     </style>
 </head>
 <body>
-    <div class="email-container">
+    <div class="card email-container">
         <div class="header">
-            <img src="https://www.google.com/u/0/ac/images/logo.gif?uid=103563472128745450479&service=google_gsuite" alt="logo">
+            <img src="https://restoji.com//resources/images/logo.png" alt="logo">
            
         </div>
         <div class="sub-header">
@@ -105,9 +111,8 @@
                 <tr>
                     <td align="center" valign="middle">
                         <div class="sub-header-content">
-                            <h1>Congratulations</h1>
-                            
-                            <h2>You have a new inquiry from your website</h2>
+                            <h1>Contact Request</h1>
+                            <h2>You have received a contact request from the website. Here are the details:</h2>
                         </div>
                     </td>
                 </tr>
