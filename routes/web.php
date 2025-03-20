@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 Route::get('/', [HomeController::class, 'index']);
 Route::post('/contact-submit', [HomeController::class, 'store'])->name('contact.submit');
+Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blog/{slug}', [BlogController::class, 'Blog_details'])->name('blogs.show');
 require __DIR__.'/auth.php';
