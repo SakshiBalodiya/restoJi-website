@@ -93,6 +93,11 @@ function page_url()
                                 <li class="nav-item">
                                     <a class="nav-link nav_headings"  href="#white-labelapp">White-Label App</a>
                                 </li>
+                                <li class="nav-item <?php if (page_url() == url('/blog') || page_url() == url('/blog')) {
+                                    echo 'active';
+                                } ?>" >
+                                    <a class="nav-link nav_headings" href="{{ url('/blog') }}" style="color: var(--primary-color);">Blog</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link nav_headings"  href="#contact_section">Contact Us</a>
                                 </li>
