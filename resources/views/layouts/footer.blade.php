@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-lg-4 footer-middle">
                     <ul>
-                        <li><img src="{{ asset('images\call-icon.png') }} " alt="call-icon"> <span> <a href="tel:+91 9829010289">+91 9829010289</li>
+                        <li><img src="{{ asset('images\call-icon.png') }} " alt="call-icon"> <span> <a href="tel:+91 9636359448">+91 9636359448</li>
                         <li><img src="{{ asset('images\mail-icon.png') }} " alt="mail-icon"> <span> <a href="mailto:info@majestictech.co.in">info@majestictech.co.in</a> </li>
                         <li><img src="{{ asset('images\web-icon.png') }} " alt="web-icon"> <span> <a href="https://www.majestictech.co.in">https://www.majestictech.co.in/ </a></li>
                         <li><img src="{{ asset('images\web-icon.png') }} " alt="web-icon"> <span> <a href="https://host.majestictech.co.in/">https://host.majestictech.co.in/ </a></li>

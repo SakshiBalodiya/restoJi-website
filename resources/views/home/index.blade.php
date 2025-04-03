@@ -190,10 +190,13 @@
             </div>
             <div class="col-lg-6 right" style="position: relative;">
                 <div class="back_icons2"></div>
-                {{-- <img src="resources/images/customer_app1.png" alt="App Mockup" class="phone_img1">
-                 <img src="resources/images/customer_app2.png" alt="App Mockup" class="phone_img2"> --}}
+                @if (Str::contains(request()->url(), 'restoji')) 
+                <img src="resources/images/customer_app1.png" alt="App Mockup" class="phone_img1">
+                 <img src="resources/images/customer_app2.png" alt="App Mockup" class="phone_img2">
+                 @else
                  <img src="resources/images/arya-app1.png" alt="App Mockup" class="phone_img1">
                  <img src="resources/images/arya-app2.png" alt="App Mockup" class="phone_img2">
+                 @endif
             </div>
         </div>
         <h2 class="how-it-works-title">How It Works?</h2>
@@ -230,16 +233,17 @@
     <div class="container text-center">
         <div class="row pt-5 faq_space_between" style="margin: 0px;">
             <div class="col-lg-6 faq_text_section">
-                <h2>FAQ’s - Everything You Need to Know.
+                <h2 style="text-align: left">FAQ’s - All Your Questions, Answered!
                 </h2>
-                <p class="paragraph">Find answers to common questions about 
+                <p class="paragraph">Explore everything you need to know about
                     @if (Str::contains(request()->url(), 'restoji')) 
                     <span>RestoJi, </span>
                     @else
                     <span>Majestic POS, </span>
                     @endif
-                    our pricing, features, and how to get started.</p>
-                <p class="paragraph">For more queries feel free to reach us.</p>
+                    including its features, pricing, and how to get started with ease. Whether you're looking for a 
+                    seamless billing solution or a branded mobile app, we’ve got you covered!</p>
+                <p class="paragraph">Still have questions?<br> Feel free to reach out—we’re happy to help!</p>
             </div>
             <div class="col-lg-6 faq-accordion">
                 <div class="card">
@@ -247,12 +251,25 @@
                         <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
                     data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        How can I purchase plan?
+                    <p style="margin-bottom: 0px">What is 
+                        @if (Str::contains(request()->url(), 'restoji')) 
+                    <span> RestoJi? </span>
+                    @else
+                    <span> Majestic POS?</span>
+                </p>
+                    @endif
+                    
                     </button>
                     </h2>
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                <p style="margin-bottom: 0px">@if (Str::contains(request()->url(), 'restoji')) 
+                                    <span> RestoJi </span>
+                                    @else
+                                    <span> Majestic POS </span>
+                                    @endif
+                                    is a smart billing and restaurant management solution that helps you streamline orders, 
+                                    payments, and customer management.</p>
                             </div>
                         </div>
                     </div>
@@ -262,12 +279,24 @@
                         <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Can I switch plans later?
+                    <p style="margin-bottom: 0px">Does 
+                    @if (Str::contains(request()->url(), 'restoji')) 
+                    <span> RestoJi </span>
+                    @else
+                    <span> Majestic POS </span>
+                    @endif
+                    work offline?</p>
                     </button>
                     </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                <p>Yes! 
+                                    @if (Str::contains(request()->url(), 'restoji')) 
+                                    <span> RestoJi </span>
+                                    @else
+                                    <span> Majestic POS </span>
+                                    @endif
+                                     operates seamlessly offline, ensuring uninterrupted billing and restaurant operations.</p>
                             </div>
                         </div>
                     </div>
@@ -277,17 +306,17 @@
                         <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
                     data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        How can I purchase plan?
+                    Can I get a branded mobile app for my restaurant?
                     </button>
                     </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                <p>Absolutely! With the Business Plan, you get a white-labeled mobile app customized for your restaurant.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                {{-- <div class="card">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
@@ -301,7 +330,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
