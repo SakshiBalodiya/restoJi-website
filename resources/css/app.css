@@ -2678,7 +2678,8 @@ header{
     font-weight: 500;
 }
 .border-dark{
-    border: 2px solid #000!important;
+   
+	border: none !important;
 }
 .nav_title{
     gap: 50px;
@@ -2759,11 +2760,18 @@ header{
     text-align: center;
     margin-top: 50px;
 }
-
+.btn-check:focus + .btn, .btn:focus {
+    outline: 0;
+    box-shadow: none !important;
+    color: #fff !important;
+}
 /* Main Dashboard Image */
 .dashboard-img {
     max-width: 60%;
     height: auto;
+}
+.btn:hover {
+    color: #fff !important;
 }
 
 .round_btn{
@@ -2821,7 +2829,7 @@ header{
 
 @media (max-width: 978px) {
 .border-dark {
-	border: 2px solid #000 !important;
+
 	width: 173px;
 }
 .fe-img img{
@@ -3217,7 +3225,7 @@ ul li {
     left: 0;
     top: 64%;
     transform: translateY(-50%);
-    width: 24%;
+    width: 15%;
     max-width: 500px;
     z-index: 0;
 }
@@ -3514,6 +3522,7 @@ a:hover {
     .footer-left, .footer-middle, .footer-right {
         width: 100%;
         margin-bottom: 20px;
+		justify-content : left;
     }
     .footer-bottom .text_align{
         text-align: center;
@@ -3545,6 +3554,10 @@ a:hover {
 	width: 380px;
 }
 @media screen and (max-width: 768px) {
+	.dashboard-img {
+		max-width: 100%;
+		height: auto;
+	}
 .feature_section .chart-4
 	{
 		width: 348px;
@@ -3649,4 +3662,7 @@ a:hover {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	overflow-wrap: break-word;
+  }
+  .accordion-body p{
+	font-size: 16px;
   }
