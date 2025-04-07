@@ -251,7 +251,7 @@
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
-
+{{-- 
             <div class="forgetBtn mt-4">
                 @if (Route::has('password.request'))
                 <a class="text-sm text-gray-600 hover:text-gray-900 forgetBtn border_bottom" style="border-bottom: 1px solid #C72C3C; padding-bottom: 1px;" href="{{ route('password.request') }}">
@@ -259,7 +259,7 @@
                 </a>
 
                 @endif
-            </div>
+            </div> --}}
                 {{-- <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button> --}}

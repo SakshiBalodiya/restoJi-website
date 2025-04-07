@@ -20,7 +20,8 @@ class BlogController extends Controller
         $blog = Blog::query();
         if(!empty($search)){
             $blog =  $blog->where('blogs.title', 'LIKE', '%' . $search . '%')
-                                ->orwhere('blogs.slug','LIKE', '%' . $search . '%');
+                                ->orwhere('blogs.slug','LIKE', '%' . $search . '%')
+                                ->orwhere('blogs.pos_type','LIKE', '%' . $search . '%');
                                 
         }
         $blog = $blog->orderBy('created_at', 'DESC')->paginate(10);
@@ -42,6 +43,7 @@ class BlogController extends Controller
         $blogs = new Blog();
         $blogs->title = $request->title;
         $blogs->userId = $request->userId;
+        $blogs->pos_type = $request->pos_type;
         $slug = Str::slug($request->title);
 
      
@@ -87,7 +89,7 @@ class BlogController extends Controller
      */
     public function admin_edit($id)
     {
-        $blog = Blog::select('blogs.id','blogs.title', 'blogs.content', 'blogs.image')->where('blogs.id',$id)->first();
+        $blog = Blog::select('blogs.id','blogs.title', 'blogs.content', 'blogs.pos_type', 'blogs.image')->where('blogs.id',$id)->first();
     
 
         return view('admin.blog.edit', compact('blog'));
@@ -140,7 +142,9 @@ class BlogController extends Controller
         if (!empty($request->content)) {
             $blogs->content = $request->content;
         }
-    
+        if (!empty($request->pos_type)) {
+        $blogs->pos_type = $request->pos_type;
+        }
         $blogs->save();
     
         return redirect('/admin/blog');

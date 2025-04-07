@@ -26,11 +26,11 @@
                     @csrf
                     <input type="text" name="userId" value="{{$userId}}" hidden></input>
                     <!-- Blog Title -->
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <label for="input13" class="form-label">Blog Title *</label>
                         <input type="text" name="title" class="form-control" required>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <label for="input13" class="form-label">Image *<span class="star"></span> </label>
                         <div class="position-relative input-icon">
                         <input type="file" src="image" name="blogimage" class="form-control" id="blogimage" placeholder="Image" required>
@@ -38,6 +38,18 @@
                             
                         </div>
                     </div>
+                    <div class="col-md-2">
+                        <label for="pos_type" class="form-label">POS Type *<span class="star"></span></label>
+                        <div class="position-relative input-icon">
+                            <select name="pos_type" id="pos_type" class="form-control" required>
+                                <option value="" disabled selected>Select POS</option>
+                                <option value="restoji">Restoji POS</option>
+                                <option value="majestic">Majestic POS</option>
+                            </select>
+                            <span class="position-absolute top-50 translate-middle-y"></span>
+                        </div>
+                    </div>
+                    
                     <div class="form-group mt-2">
                         <label>Blog Content *</label>
                         <textarea name="content" class="form-control" rows="4" placeholder=""></textarea>

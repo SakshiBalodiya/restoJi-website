@@ -16,12 +16,11 @@ class UsersFactory extends Factory
     public function definition()
     {  
          $faker = FakerFactory::create('en_IN'); 
-        return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'password' => '$2y$10$dnkU6ak8ugyULoaZQtcXKebOrbIShiUHCrNFiaDRnFU47EHkJaOQi', // password admin1234
+         return [
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => '$2y$10$dnkU6ak8ugyULoaZQtcXKebOrbIShiUHCrNFiaDRnFU47EHkJaOQi', // hashed 'admin1234'
             'remember_token' => Str::random(10),
-
         ];
     }
 }

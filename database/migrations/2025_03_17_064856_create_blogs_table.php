@@ -16,6 +16,7 @@ class CreateBlogsTable extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('userId');
+            $table->enum('pos_type', ['restoji', 'majestic'])->nullable();
             $table->string('title');
             $table->string('slug')->unique(); // Unique URL slug
             $table->mediumText('image');

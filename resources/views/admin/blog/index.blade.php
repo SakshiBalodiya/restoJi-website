@@ -50,6 +50,7 @@
 								<tr>
                                     <th class="text-center">S.No.</th>
 									<th  class="text-center">Title</th> 
+                                    <th class="text-center">POS Type</th> 
                                     <th class="text-center">Slug</th> 
 									<th class="text-center" style="width:225px;">Action</th>
 
@@ -60,6 +61,7 @@
                                 <tr>
                                     <td  class="text-center">{{$index + 1}}</td>
 									<td class="text-center" style="vertical-align: middle;">{{$blogs->title}}</td>
+                                    <td class="text-center"  style="vertical-align: middle; text-transform: capitalize;">{{$blogs->pos_type}}</td>
                                     <td class="text-center"  style="vertical-align: middle;">{{$blogs->slug}}</td>
 									<td class="text-center" style="vertical-align: middle; border-radius: 0 8px 8px 0;">
 										<a href="{{url('admin/blog/' . $blogs->id . '/edit')}}" class="edit"  style="font-size:20px;"  data-bs-target="">

@@ -18,17 +18,33 @@
                 <div class="row">
                     <!-- Blog 1 -->
                     @foreach ($blogs as $blog)
-                    <div class="col-md-4">
-                        <div class="card blog-card">
-                            {{-- <img src="https://source.unsplash.com/400x300/?restaurant,food" alt="Blog Image"> --}}
-                            <div class="card-body">
-                                <h5 class="card-title"><a href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a></h5>
-                                <p ><div class="card-content" >{!! $blog->content !!}</div></p>
-                                <a href="{{ route('blogs.show', $blog->slug) }}">Read More →</a>
+                    @if (Str::contains(request()->url(), 'restoji') && $blog->pos_type == 'restoji')
+                        <div class="col-md-4">
+                            <div class="card blog-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a>
+                                    </h5>
+                                    <div class="card-content">{!! $blog->content !!}</div>
+                                    <a href="{{ route('blogs.show', $blog->slug) }}">Read More →</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    @endforeach
+                    @elseif (Str::contains(request()->url(), 'majestic') && $blog->pos_type == 'majestic')
+                        <div class="col-md-4">
+                            <div class="card blog-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a>
+                                    </h5>
+                                    <div class="card-content">{!! $blog->content !!}</div>
+                                    <a href="{{ route('blogs.show', $blog->slug) }}">Read More →</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+                
                     {{-- 
                     <div class="col-md-4">
                         <div class="card blog-card">
