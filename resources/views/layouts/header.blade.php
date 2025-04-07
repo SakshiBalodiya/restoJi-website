@@ -79,24 +79,24 @@ function page_url()
     
                             <ul class="navbar-nav nav_title" style="border-bottom:0px;">
 
-                                <li class="nav-item <?php if (page_url() == url('/') || page_url() == url('/')) {
-                                                        echo 'active';
-                                                    } ?>" >
-                                    <a class="nav-link nav_headings" href="{{ url('/') }}" style="color: var(--primary-color);">Home</a>
+                                <li class="nav-item {{ request()->is('/') ? 'selected-tab' : '' }}">
+                                    <a class="nav-link nav_headings" href="{{ url('/') }}">Home</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link nav_headings" href="#features-section">Features</a>
+                                <li class="nav-item {{ request()->is('/#features-section') ? 'selected-tab' : '' }}">
+                                    <a class="nav-link nav_headings" href="{{ url('/#features-section')}}">Features</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link nav_headings" href="#pricing-section">Pricing</a>
+                                <li class="nav-item {{ request()->is('/#pricing-section') ? 'selected-tab' : '' }}">
+                                    <a class="nav-link nav_headings" href="{{ url('/#pricing-section') }}">Pricing</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link nav_headings"  href="#white-labelapp">White-Label App</a>
+                                <li class="nav-item {{ request()->is('/#white-labelapp') ? 'selected-tab' : '' }}">
+                                    <a class="nav-link nav_headings"  href="{{ url('/#white-labelapp') }}">White-Label App</a>
                                 </li>
-                               
-                                <li class="nav-item">
-                                    <a class="nav-link nav_headings"  href="#contact_section">Contact Us</a>
+                                <li class="nav-item {{ request()->is('blog') ? 'selected-tab' : '' }}">
+                                    <a class="nav-link nav_headings" href="{{ url('blog') }}">Blog</a>
                                 </li>
+                                <li class="nav-item {{ request()->is('/#contact_section') ? 'selected-tab' : '' }}">
+                                    <a class="nav-link nav_headings"  href="{{ url('/#contact_section') }}">Contact Us</a>
+                                 </li>
     
                                
                                 
@@ -104,10 +104,6 @@ function page_url()
                             </ul>
                             <div class="border-dark">
                                 <a href="#contact_section" class="btn book_btn btn-lg book_btn">Book A Demo</a>
-                                {{-- <ul class="navbar-nav ms-auto border-dark">
-                                    <a class="nav-link nav_headings book_btn" href="#contact_section">Book A Demo</a>
-                                
-                                </ul> --}}
                             </div>
     
                         </div>
