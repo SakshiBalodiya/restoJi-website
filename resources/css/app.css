@@ -3666,3 +3666,23 @@ a:hover {
   .accordion-body p{
 	font-size: 16px;
   }
+  .more_blog_list li {
+   
+    height: 52px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0px 10px;
+ 
+    transition: 0.3s;
+}
+
+.more_blog_list li.active-blog {
+	background-color: #fff0f194;
+    border-left: 2px solid #c72c3c;
+	color: #c72c3c;
+	font-weight: 500;
+}
+.selected-tab a{
+	color: #c72c3c;
+}

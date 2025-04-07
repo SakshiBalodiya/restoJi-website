@@ -6,11 +6,12 @@
             
             <div class="col-lg-8 text-left image-container  fe-details" style="text-align: justify !important;">
                 <div>
-                    @if (Str::contains(request()->url(), 'restoji'))
-                        <img src="resources/images/blog-img.png" alt="POS Dashboard" class="" width="100%">
-                    @else
+                    {{-- @if (Str::contains(request()->url(), 'restoji')) --}}
+                        {{-- <img src="resources/images/blog-img.png" alt="POS Dashboard" class="" width="100%"> --}}
+                    {{-- @else
                         <img src="resources/images/pos-dashboard-majestic.png" alt="POS Dashboard" class="dashboard-img">
-                    @endif
+                    @endif --}}
+                    <img src="data:image/png;base64,{{$blog->image}}"  alt="Image" style="" width="100%">
                 </div>
            
                 <div>
@@ -57,7 +58,7 @@
                 
             </div>
 
-                {{-- <div class="col-lg-4 profile_section">
+               <div class="col-lg-4 profile_section">
                     <div class="profile-card author-section">
                         <h5>Restoji POS</h5>
                         <p>Your All-in-One Restaurant POS Solution</p>
@@ -68,16 +69,19 @@
                 
                     
                     <div class="article-list mt-5">
-                        <h5 class="mt-3">Why Choose Restoji POS?</h5>
-                        <ul class="list-unstyled" style="text-align: left;">
-                        
-                            <li>Fast & Easy to Use – No technical knowledge required.</li>
-                            <li>Accept Orders from Customer App – Seamlessly handle online and offline sales.</li>
-                            <li>Supports Multiple Payment Methods – Cash, cards, UPI, and wallets.</li>
-                            <li>Advanced Analytics & Reports – Make smarter business decisions.</li>
+                        <h5 class="mt-3">More Blogs</h5>
+                        <ul class="list-unstyled more_blog_list" style="text-align: left;">
+                            @foreach ($allBlogs as $blogs)
+                                <li class="{{ $blogs->id === $blog->id ? 'active-blog' : '' }}">
+                                    <a href="{{ route('blogs.show', $blogs->slug) }}" style="text-decoration: none; color: inherit; display: block; width: 100%;">
+                                        {{ $blogs->title }}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
+                        
                     </div>
-                </div> --}}
+                </div> 
            
 
         </div>
